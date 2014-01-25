@@ -12,9 +12,19 @@ TARGET = qtgl
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp
+SOURCES += main.cpp \
+    window.cpp \
+    basicusagescene.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += \
+    window.h \
+    abstractscene.h \
+    basicusagescene.h
 
-FORMS    += mainwindow.ui
+OTHER_FILES += \
+    shaders/phong.frag \
+    shaders/phong.vert
+
+RESOURCES += \
+    resources.qrc
+
