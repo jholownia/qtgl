@@ -43,15 +43,15 @@ void BasicUsageScene::prepareShaderProgram()
 {
     if (!shaderProgram_.addShaderFromSourceFile(QOpenGLShader::Vertex, ":shaders/phong.vert"))
     {
-        qCritical() << "error";
+        qCritical() << QObject::tr("Error compiling vertex shader.");
     }
     if (!shaderProgram_.addShaderFromSourceFile(QOpenGLShader::Fragment, ":shaders/phong.frag"))
     {
-        qCritical() << "error";
+        qCritical() << QObject::tr("Error compiling fragment shader.");
     }
     if (!shaderProgram_.link())
     {
-        qCritical() << "error";
+        qCritical() << QObject::tr("Error linking shader program.");
     }
 }
 
