@@ -12,10 +12,11 @@ Window::Window(QScreen *screen) :
     QSurfaceFormat format;
     format.setDepthBufferSize(24);
     format.setMajorVersion(3);
-    format.setMinorVersion(1);
+    format.setMinorVersion(3);
     format.setSamples(4);
     format.setProfile(QSurfaceFormat::CoreProfile);
 
+    resize(800, 600);
     setFormat(format);
     create();
 
@@ -26,10 +27,9 @@ Window::Window(QScreen *screen) :
     scene_->setContext(context_);
     initializeGl();
 
-    resize(QSize(800, 450));
-
     connect(this, SIGNAL(widthChanged(int)), this, SLOT(resizeGl()));
     connect(this, SIGNAL(heightChanged(int)), this, SLOT(resizeGl()));
+    resizeGl();
 
     QTimer* timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(updateScene()));

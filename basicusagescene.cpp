@@ -13,6 +13,9 @@ BasicUsageScene::BasicUsageScene() :
 
 void BasicUsageScene::init()
 {
+    vao_.create();
+    vao_.bind();
+
     prepareShaderProgram();
     prepareVertexBuffers();
 }
